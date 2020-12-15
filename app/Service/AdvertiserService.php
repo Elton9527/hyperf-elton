@@ -53,17 +53,17 @@ class AdvertiserService
                 'contact_person', 'contact_person_email', 'contact_person_telephone', 'contact_person_mobile',
                 'wechat_spec', 'websites',
             ]; // 需要返回的字段
-            /*$response = $tads->advertiser()
+            $response = $tads->advertiser()
                 ->get([
                     'account_id' => $this->account_id,
                     'fields'     => $fields,
-                ]);*/
+                ]);
 
             // 从返回里获得Advertiser信息
-            /*foreach ($response->getList() as $advertiserInfo) {
+            foreach ($response->getList() as $advertiserInfo) {
                  echo $advertiserInfo . PHP_EOL;
             }
-            return $response;*/
+            return $response;
         } catch (TencentAdsResponseException $e) {
             // When Api returns an error
             echo 'Tencent ads returned an error: ' . $e->getMessage() . PHP_EOL;

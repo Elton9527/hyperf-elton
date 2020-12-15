@@ -21,28 +21,25 @@ class TencentadController
     private $redirect_uri = 'http://tf.cps24.dzods.cn';
     private $client_id = '1111217397';
     private $client_secret = 'zqQAfQfXGR6tKOzC';
-    private $authorization_code = '321dd87233b479a790a99a2a29fca204';
+    private $authorization_code = '29a8b20b9501e5f65ddda412feac0497';
 
     public $advertiser;
 
 
     public function index(RequestInterface $request, ResponseInterface $response)
     {
-        $this->getAuthCode();
+        //$this->getAuthCode();
         $token = '';
         //$token = $this->getToken();
-        $access_token = "63f2079449264031d61aeb964486ce7d";
+        $access_token = "bd00ff47e3f2d80e3f2b875f12893a42";
         $account_id = 16585766;
 
-        //$this->advertiser = new AdvertiserService($access_token, $account_id);
+        $this->advertiser = new AdvertiserService($access_token, $account_id);
 
-        //$this->advertiser->main();
+        $this->advertiser->main();
 
         return $response->raw("Hello Hyperf!{$token}");
     }
-
-
-
 
     //第二步 获取token
     public function getToken()
