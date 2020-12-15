@@ -25,7 +25,8 @@
         "hyperf/memory": "~2.0.0",
         "hyperf/process": "~2.0.0",
         "hyperf/redis": "~2.0.0",
-        "hyperf/crontab": "^2.0"
+        "hyperf/crontab": "^2.0",
+        "tencent-ad/marketing-api-php-sdk": "^1.1"
     },
     "require-dev": {
         "swoole/ide-helper": "^4.5",
