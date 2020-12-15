@@ -9,7 +9,6 @@ declare(strict_types=1);
  * @contact  group@hyperf.io
  * @license  https://github.com/hyperf/hyperf/blob/master/LICENSE
  */
-// config/autoload/processes.php
 return [
-    \Hyperf\Crontab\Process\CrontabDispatcherProcess::class,
+    Hyperf\Crontab\Process\CrontabDispatcherProcess::class,
 ];
