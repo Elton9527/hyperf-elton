@@ -21,7 +21,7 @@ class TencentadController
     private $redirect_uri = 'http://tf.cps24.dzods.cn';
     private $client_id = '1111217397';
     private $client_secret = 'zqQAfQfXGR6tKOzC';
-    private $authorization_code = '29a8b20b9501e5f65ddda412feac0497';
+    private $authorization_code = 'a6275da6af13cb1d2d3f4886db38fa96';
 
     public $advertiser;
 
@@ -30,15 +30,32 @@ class TencentadController
     {
         //$this->getAuthCode();
         $token = '';
-        //$token = $this->getToken();
-        $access_token = "bd00ff47e3f2d80e3f2b875f12893a42";
+
+        $token = $this->getToken();
+        /**
+        $access_token = "efbbdc39d39b076fcf4382bab7d448c2";
         $account_id = 16585766;
 
-        $this->advertiser = new AdvertiserService($access_token, $account_id);
-
-        $this->advertiser->main();
+        $this->advertiser = new AdvertiserService($access_token);
+        $this->advertiser->getAdvertiserList();*/
 
         return $response->raw("Hello Hyperf!{$token}");
+    }
+
+
+    public function getWechatAdvertiser(RequestInterface $request, ResponseInterface $response)
+    {
+        $access_token = "efbbdc39d39b076fcf4382bab7d448c2";
+        $this->advertiser = new AdvertiserService($access_token);
+        $this->advertiser->getWechatAdvertiser();
+    }
+
+
+    public function test(RequestInterface $request, ResponseInterface $response)
+    {
+
+        //$account_id =  16782335;
+        //$this->advertiser->getAdvertiser($account_id);
     }
 
     //第二步 获取token
