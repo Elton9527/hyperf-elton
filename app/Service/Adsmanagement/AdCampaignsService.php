@@ -99,11 +99,11 @@ class AdCampaignsService
                     'values' => ['PROMOTED_OBJECT_TYPE_APP_IOS'],
                 ],
             ]; // 过滤条件
-            $fields = ['campaign_id', 'campaign_name']; // 需要返回的字段
+            $fields = ['campaign_id', 'configured_status', 'campaign_name', 'campaign_type', 'promoted_object_type', 'created_time', 'last_modified_time']; // 需要返回的字段
             $response = $tads->campaigns()
                 ->get([
                     'account_id' => static::$ACCOUNT_ID,
-                    'filtering' => $filtering,
+                    //'filtering' => $filtering,
                     'fields' => $fields,
                 ]);
 
