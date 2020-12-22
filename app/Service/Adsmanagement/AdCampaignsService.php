@@ -16,8 +16,8 @@ use TencentAds\TencentAds;
 class AdCampaignsService
 {
     public static $tads;
-    public static $ACCESS_TOKEN         = 'YOUR ACCESS TOKEN';
-    public static $ACCOUNT_ID           = 'YOUR ACCOUNT ID';
+    public static $ACCESS_TOKEN;
+    public static $ACCOUNT_ID;
     public static $CAMPAIGN_TYPE        = 'CAMPAIGN_TYPE_NORMAL'; // 普通推广计划
     //public static $PROMOTED_OBJECT_TYPE = 'PROMOTED_OBJECT_TYPE_LINK'; // 推广普通外链
     public static $PROMOTED_OBJECT_TYPE = 'PROMOTED_OBJECT_TYPE_APP_IOS'; // 推广普通外链
