@@ -12,6 +12,7 @@ namespace App\Controller;
 use App\Service\Adsmanagement\AdCampaignsService;
 use App\Service\Adsmanagement\AdCreativeService;
 use App\Service\Adsmanagement\AdGroupService;
+use App\Service\Adsmanagement\AdService;
 use Hyperf\Di\Annotation\Inject;
 use Hyperf\HttpServer\Annotation\AutoController;
 
@@ -46,6 +47,13 @@ class AdcampaignController
      * @var AdCreativeService
      */
     protected $adcreative_service;
+
+
+    /**
+     * @Inject()
+     * @var AdService
+     */
+    protected $ad_service;
 
     public function addcampaign()
     {
@@ -125,4 +133,35 @@ class AdcampaignController
         echo "创意广告列表：" . json_encode($data);
     }
 
+
+    /**
+     * 创建一条广告
+     * 创建广告参数 campaign adgroup adcreative 促销目标需要一直，否则创建不成功
+     * @throws \TencentAds\Exception\TencentAdsResponseException
+     * @throws \TencentAds\Exception\TencentAdsSDKException
+     */
+    public function addad()
+    {
+        $campaign_id = '387118929';
+        $adgroup_id = '387189826';
+        $adcreative_id = '387792219';
+
+        $this->ad_service->init($this->access_token, $this->account_id,$campaign_id, $adgroup_id, $adcreative_id);
+        $adId  = $this->ad_service->add();
+        echo "添加广告成功，广告ID{$adId}";
+    }
+
+
+    /**
+     * 获取所有的广告列表
+     * @throws \TencentAds\ApiException
+     * @throws \TencentAds\Exception\TencentAdsResponseException
+     * @throws \TencentAds\Exception\TencentAdsSDKException
+     */
+    public function adlist()
+    {
+        $this->ad_service->init($this->access_token, $this->account_id);
+        $data  = $this->ad_service->list();
+        echo "广告列表：".json_encode($data);
+    }
 }
