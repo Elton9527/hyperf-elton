@@ -101,7 +101,7 @@ class AdService
                     'values'   => ['AD_STATUS_NORMAL'],
                 ],
             ]; // 过滤条件
-            $fields = ['ad_id', 'campaign_id', 'adgroup_id', 'adcreative_id', 'ad_name']; // 需要返回的字段
+            $fields = ['ad_id', 'configured_status','system_status','ad_name','campaign_id', 'adgroup_id', 'adcreative_id', 'created_time','last_modified_time']; // 需要返回的字段
             $response = $tads->ads()
                 ->get([
                     'account_id' => static::$ACCOUNT_ID,
