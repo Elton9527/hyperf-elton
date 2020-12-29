@@ -13,6 +13,7 @@ use App\Service\Adsmanagement\AdCampaignsService;
 use App\Service\Adsmanagement\AdCreativeService;
 use App\Service\Adsmanagement\AdGroupService;
 use App\Service\Adsmanagement\AdService;
+use App\Service\Adsmanagement\DailyReportService;
 use Hyperf\Di\Annotation\Inject;
 use Hyperf\HttpServer\Annotation\AutoController;
 
@@ -55,6 +56,21 @@ class AdcampaignController
      */
     protected $ad_service;
 
+
+    /**
+     * @Inject()
+     * @var DailyReportService
+     */
+    protected $dailyreport_service;
+
+
+    #region # 广告管理
+
+    /**
+     * 创建 推广计划
+     * @throws \TencentAds\ApiException
+     * @throws \TencentAds\Exception\TencentAdsResponseException
+     */
     public function addcampaign()
     {
         $this->adcampaign_service->init($this->access_token, $this->account_id);
@@ -86,13 +102,10 @@ class AdcampaignController
         $campaign_id = '387118929';
         $begin_date = date('Y-m-d', time());
         $end_date = date('Y-m-d', strtotime("+1 week"));
-        //echo $begin_date.PHP_EOL;
-        //echo $end_date.PHP_EOL;
         $this->adgroup_service->init($this->access_token, $this->account_id, $campaign_id, $begin_date, $end_date);
         $adGroupId = $this->adgroup_service->addAdGroup();
         echo $adGroupId;
     }
-
 
     /**
      * 获取广告组列表
@@ -151,7 +164,6 @@ class AdcampaignController
         echo "添加广告成功，广告ID{$adId}";
     }
 
-
     /**
      * 获取所有的广告列表
      * @throws \TencentAds\ApiException
@@ -164,4 +176,32 @@ class AdcampaignController
         $data  = $this->ad_service->list();
         echo "广告列表：".json_encode($data);
     }
+
+    #endregion
+
+
+    #region # 数据洞察
+
+    // 获取日报表
+    public function getDailyReports()
+    {
+        // 17610333
+        // 16926821
+        // 16881609
+        // 15066747
+        $access_token = '5d496e360a3d37e434ec36861bcbb1b5';
+        $account_id = '15066747';
+
+        /*$start_date = date('Y-m-d', strtotime("-1 day"));
+        $end_date = date('Y-m-d');*/
+        $start_date = '2020-10-16';
+        $end_date = '2020-11-27';
+        $this->dailyreport_service->init($access_token, $account_id, $start_date, $end_date);
+        $data = $this->dailyreport_service->main();
+        echo "日报数据" . json_encode($data);
+    }
+
+
+
+    #endregion
 }
