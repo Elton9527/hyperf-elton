@@ -31,7 +31,7 @@ class AdCampaignsService
         static::$ACCOUNT_ID = $account_id;
         $tads = TencentAds::init([
             'access_token' => static::$ACCESS_TOKEN,
-            'is_debug'     => true,
+            'is_debug'     => false,
         ]);
         //$tads->useSandbox(); // 默认访问沙箱环境，如访问正式环境，请切换为$tads->useProduction()
         $tads->useProduction();
@@ -99,17 +99,21 @@ class AdCampaignsService
                     'values' => ['PROMOTED_OBJECT_TYPE_APP_IOS'],
                 ],
             ]; // 过滤条件
-            $fields = ['campaign_id', 'configured_status', 'campaign_name', 'campaign_type', 'promoted_object_type', 'created_time', 'last_modified_time']; // 需要返回的字段
+            //$fields = ['campaign_id', 'configured_status', 'campaign_name', 'campaign_type', 'promoted_object_type', 'created_time', 'last_modified_time']; // 需要返回的字段
+            $fields = ["campaign_id","adgroup_id","ad_id","ad_name","adcreative_id","adcreative","configured_status","system_status","audit_spec","impression_tracking_url","click_tracking_url","feeds_interaction_enabled","reject_message","is_deleted","is_dynamic_creative","created_time","last_modified_time"];
+
+            $fields = ['campaign_id','campaign_name','configured_status','campaign_type','promoted_object_type','daily_budget','total_budget','budget_reach_date','created_time','last_modified_time','completed_time','speed_mode','is_deleted','begin_date','end_date','is_auto_replenish','settlement_basis_type','preference_type','preference_id','project_id'];
             $response = $tads->campaigns()
                 ->get([
                     'account_id' => static::$ACCOUNT_ID,
                     //'filtering' => $filtering,
                     'fields' => $fields,
+                    'page_size' => 100
                 ]);
 
             // 从返回里获得Campaigns信息
             foreach ($response->getList() as $campaignInfo) {
-                // echo 'Campaign ID: ' . $campaignInfo->getCampaignId() . PHP_EOL;
+                 echo 'Campaign ID: ' . $campaignInfo->getCampaignId() . PHP_EOL;
                 // echo 'Campaign name: ' . $campaignInfo->getCampaignName() . PHP_EOL;
             }
 
