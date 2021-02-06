@@ -11,5 +11,7 @@ declare(strict_types=1);
  */
 return [
     'http' => [
+        // 定义全局中间件
+        \App\Middleware\Auth\FooMiddleware::class
     ],
 ];
