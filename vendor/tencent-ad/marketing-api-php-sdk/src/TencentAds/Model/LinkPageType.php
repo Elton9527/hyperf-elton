@@ -51,6 +51,9 @@ class LinkPageType
     const MINI_PROGRAM_WECHAT = 'LINK_PAGE_TYPE_MINI_PROGRAM_WECHAT';
     const MINI_GAME_WECHAT = 'LINK_PAGE_TYPE_MINI_GAME_WECHAT';
     const FENGYE_ECOMMERCE = 'LINK_PAGE_TYPE_FENGYE_ECOMMERCE';
+    const WECHAT_MOMENTS_SIMPLE_NATIVE = 'LINK_PAGE_TYPE_WECHAT_MOMENTS_SIMPLE_NATIVE';
+    const CHANNELS_WATCH_LIVE = 'LINK_PAGE_TYPE_CHANNELS_WATCH_LIVE';
+    const CHANNELS_RESERVE_LIVE = 'LINK_PAGE_TYPE_CHANNELS_RESERVE_LIVE';
     
     /**
      * Gets allowable values of the enum
@@ -66,6 +69,9 @@ class LinkPageType
             self::MINI_PROGRAM_WECHAT,
             self::MINI_GAME_WECHAT,
             self::FENGYE_ECOMMERCE,
+            self::WECHAT_MOMENTS_SIMPLE_NATIVE,
+            self::CHANNELS_WATCH_LIVE,
+            self::CHANNELS_RESERVE_LIVE,
         ];
     }
 }

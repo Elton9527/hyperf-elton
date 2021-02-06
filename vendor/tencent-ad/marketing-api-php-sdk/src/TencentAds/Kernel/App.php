@@ -3,6 +3,7 @@ namespace TencentAds\Kernel;
 
 use GuzzleHttp\Client;
 use TencentAds\Container\AdDiagnosisApiContainer;
+use TencentAds\Container\AdLabelApiContainer;
 use TencentAds\Container\AdcreativePreviewsApiContainer;
 use TencentAds\Container\AdcreativeTemplateDetailApiContainer;
 use TencentAds\Container\AdcreativeTemplatePreviewApiContainer;
@@ -13,6 +14,9 @@ use TencentAds\Container\AdcreativesRelatedCapabilityApiContainer;
 use TencentAds\Container\AdgroupsApiContainer;
 use TencentAds\Container\AdsApiContainer;
 use TencentAds\Container\AdvertiserApiContainer;
+use TencentAds\Container\AgencyInnerTransferApiContainer;
+use TencentAds\Container\AgencyPeerTransferApiContainer;
+use TencentAds\Container\AgencyRealtimeCostApiContainer;
 use TencentAds\Container\AndroidChannelPackagesApiContainer;
 use TencentAds\Container\AndroidUnionChannelPackagesApiContainer;
 use TencentAds\Container\AssetPermissionsApiContainer;
@@ -48,6 +52,7 @@ use TencentAds\Container\CustomTagsApiContainer;
 use TencentAds\Container\DailyCostApiContainer;
 use TencentAds\Container\DailyReportsApiContainer;
 use TencentAds\Container\DiagnosisApiContainer;
+use TencentAds\Container\DplabelAdLabelApiContainer;
 use TencentAds\Container\DynamicAdImagesApiContainer;
 use TencentAds\Container\DynamicAdTemplatesApiContainer;
 use TencentAds\Container\DynamicAdVideoApiContainer;
@@ -74,6 +79,7 @@ use TencentAds\Container\LocalStoresApiContainer;
 use TencentAds\Container\LocalStoresSearchInfoApiContainer;
 use TencentAds\Container\OauthApiContainer;
 use TencentAds\Container\OptimizationGoalPermissionsApiContainer;
+use TencentAds\Container\OuterCluesApiContainer;
 use TencentAds\Container\PagesApiContainer;
 use TencentAds\Container\PlayablePagesApiContainer;
 use TencentAds\Container\ProductCatalogsApiContainer;
@@ -94,6 +100,7 @@ use TencentAds\Container\SystemStatusApiContainer;
 use TencentAds\Container\TargetingTagReportsApiContainer;
 use TencentAds\Container\TargetingTagsApiContainer;
 use TencentAds\Container\TargetingsApiContainer;
+use TencentAds\Container\TargetingsShareApiContainer;
 use TencentAds\Container\TrackingReportsApiContainer;
 use TencentAds\Container\UnionPositionPackagesApiContainer;
 use TencentAds\Container\UserActionSetReportsApiContainer;
@@ -104,6 +111,7 @@ use TencentAds\Container\UserPropertySetsApiContainer;
 use TencentAds\Container\VideomakerAutoadjustmentsApiContainer;
 use TencentAds\Container\VideomakerSubtitlesApiContainer;
 use TencentAds\Container\VideomakerTasksApiContainer;
+use TencentAds\Container\VideomakerVideocapturesApiContainer;
 use TencentAds\Container\VideosApiContainer;
 use TencentAds\Container\WechatAdFollowersApiContainer;
 use TencentAds\Container\WechatAdLabelsApiContainer;
@@ -130,6 +138,9 @@ class App
 
     /** @var AdDiagnosisApiContainer */
     public $adDiagnosisApiContainer;
+
+    /** @var AdLabelApiContainer */
+    public $adLabelApiContainer;
 
     /** @var AdcreativePreviewsApiContainer */
     public $adcreativePreviewsApiContainer;
@@ -160,6 +171,15 @@ class App
 
     /** @var AdvertiserApiContainer */
     public $advertiserApiContainer;
+
+    /** @var AgencyInnerTransferApiContainer */
+    public $agencyInnerTransferApiContainer;
+
+    /** @var AgencyPeerTransferApiContainer */
+    public $agencyPeerTransferApiContainer;
+
+    /** @var AgencyRealtimeCostApiContainer */
+    public $agencyRealtimeCostApiContainer;
 
     /** @var AndroidChannelPackagesApiContainer */
     public $androidChannelPackagesApiContainer;
@@ -266,6 +286,9 @@ class App
     /** @var DiagnosisApiContainer */
     public $diagnosisApiContainer;
 
+    /** @var DplabelAdLabelApiContainer */
+    public $dplabelAdLabelApiContainer;
+
     /** @var DynamicAdImagesApiContainer */
     public $dynamicAdImagesApiContainer;
 
@@ -344,6 +367,9 @@ class App
     /** @var OptimizationGoalPermissionsApiContainer */
     public $optimizationGoalPermissionsApiContainer;
 
+    /** @var OuterCluesApiContainer */
+    public $outerCluesApiContainer;
+
     /** @var PagesApiContainer */
     public $pagesApiContainer;
 
@@ -404,6 +430,9 @@ class App
     /** @var TargetingsApiContainer */
     public $targetingsApiContainer;
 
+    /** @var TargetingsShareApiContainer */
+    public $targetingsShareApiContainer;
+
     /** @var TrackingReportsApiContainer */
     public $trackingReportsApiContainer;
 
@@ -433,6 +462,9 @@ class App
 
     /** @var VideomakerTasksApiContainer */
     public $videomakerTasksApiContainer;
+
+    /** @var VideomakerVideocapturesApiContainer */
+    public $videomakerVideocapturesApiContainer;
 
     /** @var VideosApiContainer */
     public $videosApiContainer;
@@ -512,6 +544,20 @@ class App
             $this->adDiagnosisApiContainer = $container;
         }
         return $this->adDiagnosisApiContainer;
+    }
+
+
+    /**
+     * @return AdLabelApiContainer
+     */
+    public function adLabel()
+    {
+        if (empty($this->adLabelApiContainer)) {
+            $container = new AdLabelApiContainer();
+            $container->init($this, $this->getClient());
+            $this->adLabelApiContainer = $container;
+        }
+        return $this->adLabelApiContainer;
     }
 
 
@@ -652,6 +698,48 @@ class App
             $this->advertiserApiContainer = $container;
         }
         return $this->advertiserApiContainer;
+    }
+
+
+    /**
+     * @return AgencyInnerTransferApiContainer
+     */
+    public function agencyInnerTransfer()
+    {
+        if (empty($this->agencyInnerTransferApiContainer)) {
+            $container = new AgencyInnerTransferApiContainer();
+            $container->init($this, $this->getClient());
+            $this->agencyInnerTransferApiContainer = $container;
+        }
+        return $this->agencyInnerTransferApiContainer;
+    }
+
+
+    /**
+     * @return AgencyPeerTransferApiContainer
+     */
+    public function agencyPeerTransfer()
+    {
+        if (empty($this->agencyPeerTransferApiContainer)) {
+            $container = new AgencyPeerTransferApiContainer();
+            $container->init($this, $this->getClient());
+            $this->agencyPeerTransferApiContainer = $container;
+        }
+        return $this->agencyPeerTransferApiContainer;
+    }
+
+
+    /**
+     * @return AgencyRealtimeCostApiContainer
+     */
+    public function agencyRealtimeCost()
+    {
+        if (empty($this->agencyRealtimeCostApiContainer)) {
+            $container = new AgencyRealtimeCostApiContainer();
+            $container->init($this, $this->getClient());
+            $this->agencyRealtimeCostApiContainer = $container;
+        }
+        return $this->agencyRealtimeCostApiContainer;
     }
 
 
@@ -1146,6 +1234,20 @@ class App
 
 
     /**
+     * @return DplabelAdLabelApiContainer
+     */
+    public function dplabelAdLabel()
+    {
+        if (empty($this->dplabelAdLabelApiContainer)) {
+            $container = new DplabelAdLabelApiContainer();
+            $container->init($this, $this->getClient());
+            $this->dplabelAdLabelApiContainer = $container;
+        }
+        return $this->dplabelAdLabelApiContainer;
+    }
+
+
+    /**
      * @return DynamicAdImagesApiContainer
      */
     public function dynamicAdImages()
@@ -1510,6 +1612,20 @@ class App
 
 
     /**
+     * @return OuterCluesApiContainer
+     */
+    public function outerClues()
+    {
+        if (empty($this->outerCluesApiContainer)) {
+            $container = new OuterCluesApiContainer();
+            $container->init($this, $this->getClient());
+            $this->outerCluesApiContainer = $container;
+        }
+        return $this->outerCluesApiContainer;
+    }
+
+
+    /**
      * @return PagesApiContainer
      */
     public function pages()
@@ -1790,6 +1906,20 @@ class App
 
 
     /**
+     * @return TargetingsShareApiContainer
+     */
+    public function targetingsShare()
+    {
+        if (empty($this->targetingsShareApiContainer)) {
+            $container = new TargetingsShareApiContainer();
+            $container->init($this, $this->getClient());
+            $this->targetingsShareApiContainer = $container;
+        }
+        return $this->targetingsShareApiContainer;
+    }
+
+
+    /**
      * @return TrackingReportsApiContainer
      */
     public function trackingReports()
@@ -1926,6 +2056,20 @@ class App
             $this->videomakerTasksApiContainer = $container;
         }
         return $this->videomakerTasksApiContainer;
+    }
+
+
+    /**
+     * @return VideomakerVideocapturesApiContainer
+     */
+    public function videomakerVideocaptures()
+    {
+        if (empty($this->videomakerVideocapturesApiContainer)) {
+            $container = new VideomakerVideocapturesApiContainer();
+            $container->init($this, $this->getClient());
+            $this->videomakerVideocapturesApiContainer = $container;
+        }
+        return $this->videomakerVideocapturesApiContainer;
     }
 
 

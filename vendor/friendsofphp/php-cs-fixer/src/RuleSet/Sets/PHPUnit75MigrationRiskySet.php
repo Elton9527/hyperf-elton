@@ -23,12 +23,14 @@ final class PHPUnit75MigrationRiskySet extends AbstractRuleSetDescription
     {
         return [
             '@PHPUnit60Migration:risky' => true,
-            'php_unit_dedicate_assert_internal_type' => true,
+            'php_unit_dedicate_assert_internal_type' => [
+                'target' => '7.5',
+            ],
         ];
     }
 
     public function getDescription()
     {
-        return 'Rules to improve tests code for PHPUnit 7.5 compatibility';
+        return 'Rules to improve tests code for PHPUnit 7.5 compatibility.';
     }
 }

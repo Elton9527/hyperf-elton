@@ -75,9 +75,9 @@ abstract class AbstractIntegrationTestCase extends TestCase
      */
     private static $fileRemoval;
 
-    public static function setUpBeforeClass()
+    public static function doSetUpBeforeClass()
     {
-        parent::setUpBeforeClass();
+        parent::doSetUpBeforeClass();
 
         $tmpFile = static::getTempFile();
         self::$fileRemoval = new FileRemoval();
@@ -93,9 +93,9 @@ abstract class AbstractIntegrationTestCase extends TestCase
         }
     }
 
-    public static function tearDownAfterClass()
+    public static function doTearDownAfterClass()
     {
-        parent::tearDownAfterClass();
+        parent::doTearDownAfterClass();
 
         $tmpFile = static::getTempFile();
 
@@ -103,9 +103,9 @@ abstract class AbstractIntegrationTestCase extends TestCase
         self::$fileRemoval = null;
     }
 
-    protected function setUp()
+    protected function doSetUp()
     {
-        parent::setUp();
+        parent::doSetUp();
 
         $this->linter = $this->getLinter();
 
@@ -115,9 +115,9 @@ abstract class AbstractIntegrationTestCase extends TestCase
         }
     }
 
-    protected function tearDown()
+    protected function doTearDown()
     {
-        parent::tearDown();
+        parent::doTearDown();
 
         $this->linter = null;
 
@@ -129,6 +129,7 @@ abstract class AbstractIntegrationTestCase extends TestCase
      * @dataProvider provideIntegrationCases
      *
      * @see doTest()
+     * @large
      */
     public function testIntegration(IntegrationCase $case)
     {
@@ -142,9 +143,11 @@ abstract class AbstractIntegrationTestCase extends TestCase
      */
     public function provideIntegrationCases()
     {
-        $fixturesDir = realpath(static::getFixturesDir());
+        $dir = static::getFixturesDir();
+        $fixturesDir = realpath($dir);
+
         if (!is_dir($fixturesDir)) {
-            throw new \UnexpectedValueException(sprintf('Given fixture dir "%s" is not a directory.', $fixturesDir));
+            throw new \UnexpectedValueException(sprintf('Given fixture dir "%s" is not a directory.', \is_string($fixturesDir) ? $fixturesDir : $dir));
         }
 
         $factory = static::createIntegrationCaseFactory();

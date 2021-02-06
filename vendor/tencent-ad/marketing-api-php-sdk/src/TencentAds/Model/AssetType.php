@@ -44,6 +44,7 @@ class AssetType
     /**
      * Possible values of this enum
      */
+    const NDMP = 'ASSET_TYPE_NDMP';
     const XIJING = 'ASSET_TYPE_XIJING';
     const CANVAS_WECHAT = 'ASSET_TYPE_CANVAS_WECHAT';
     const CANVAS_IMAGE = 'ASSET_TYPE_CANVAS_IMAGE';
@@ -53,6 +54,8 @@ class AssetType
     const AD_QUALIFICATION = 'ASSET_TYPE_AD_QUALIFICATION';
     const CATALOG = 'ASSET_TYPE_CATALOG';
     const ACTION_SET = 'ASSET_TYPE_ACTION_SET';
+    const CONVERSION_SPEC = 'ASSET_TYPE_CONVERSION_SPEC';
+    const UNION_PACKAGE = 'ASSET_TYPE_UNION_PACKAGE';
     
     /**
      * Gets allowable values of the enum
@@ -61,6 +64,7 @@ class AssetType
     public static function getAllowableEnumValues()
     {
         return [
+            self::NDMP,
             self::XIJING,
             self::CANVAS_WECHAT,
             self::CANVAS_IMAGE,
@@ -70,6 +74,8 @@ class AssetType
             self::AD_QUALIFICATION,
             self::CATALOG,
             self::ACTION_SET,
+            self::CONVERSION_SPEC,
+            self::UNION_PACKAGE,
         ];
     }
 }

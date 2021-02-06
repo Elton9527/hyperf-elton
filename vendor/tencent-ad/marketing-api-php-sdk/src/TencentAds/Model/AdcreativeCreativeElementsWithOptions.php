@@ -77,7 +77,7 @@ class AdcreativeCreativeElementsWithOptions implements ModelInterface, ArrayAcce
         'bottomText' => 'string',
         'miniProgramId' => 'string',
         'miniProgramPath' => 'string',
-        'label' => '\TencentAds\Model\AdcreativeLabel[]',
+        'label' => '\TencentAds\Model\CreativeLabel[]',
         'productTags' => 'string[]',
         'logoDescription' => 'string',
         'logo' => 'string',
@@ -96,6 +96,7 @@ class AdcreativeCreativeElementsWithOptions implements ModelInterface, ArrayAcce
         'fullScreenImage' => 'string',
         'zipUrl' => 'string',
         'endPage' => '\TencentAds\Model\AdCreativeEndPage',
+        'shopImage' => 'string',
         'countdownExpiringTimestamp' => 'int'
     ];
 
@@ -143,6 +144,7 @@ class AdcreativeCreativeElementsWithOptions implements ModelInterface, ArrayAcce
         'fullScreenImage' => null,
         'zipUrl' => null,
         'endPage' => null,
+        'shopImage' => null,
         'countdownExpiringTimestamp' => 'int64'
     ];
 
@@ -211,6 +213,7 @@ class AdcreativeCreativeElementsWithOptions implements ModelInterface, ArrayAcce
         'fullScreenImage' => 'full_screen_image',
         'zipUrl' => 'zip_url',
         'endPage' => 'end_page',
+        'shopImage' => 'shop_image',
         'countdownExpiringTimestamp' => 'countdown_expiring_timestamp'
     ];
 
@@ -258,6 +261,7 @@ class AdcreativeCreativeElementsWithOptions implements ModelInterface, ArrayAcce
         'fullScreenImage' => 'setFullScreenImage',
         'zipUrl' => 'setZipUrl',
         'endPage' => 'setEndPage',
+        'shopImage' => 'setShopImage',
         'countdownExpiringTimestamp' => 'setCountdownExpiringTimestamp'
     ];
 
@@ -305,6 +309,7 @@ class AdcreativeCreativeElementsWithOptions implements ModelInterface, ArrayAcce
         'fullScreenImage' => 'getFullScreenImage',
         'zipUrl' => 'getZipUrl',
         'endPage' => 'getEndPage',
+        'shopImage' => 'getShopImage',
         'countdownExpiringTimestamp' => 'getCountdownExpiringTimestamp'
     ];
 
@@ -406,6 +411,7 @@ class AdcreativeCreativeElementsWithOptions implements ModelInterface, ArrayAcce
         $this->container['fullScreenImage'] = isset($data['fullScreenImage']) ? $data['fullScreenImage'] : null;
         $this->container['zipUrl'] = isset($data['zipUrl']) ? $data['zipUrl'] : null;
         $this->container['endPage'] = isset($data['endPage']) ? $data['endPage'] : null;
+        $this->container['shopImage'] = isset($data['shopImage']) ? $data['shopImage'] : null;
         $this->container['countdownExpiringTimestamp'] = isset($data['countdownExpiringTimestamp']) ? $data['countdownExpiringTimestamp'] : null;
     }
 
@@ -892,7 +898,7 @@ class AdcreativeCreativeElementsWithOptions implements ModelInterface, ArrayAcce
     /**
      * Gets label
      *
-     * @return \TencentAds\Model\AdcreativeLabel[]
+     * @return \TencentAds\Model\CreativeLabel[]
      */
     public function getLabel()
     {
@@ -902,7 +908,7 @@ class AdcreativeCreativeElementsWithOptions implements ModelInterface, ArrayAcce
     /**
      * Sets label
      *
-     * @param \TencentAds\Model\AdcreativeLabel[] $label label
+     * @param \TencentAds\Model\CreativeLabel[] $label label
      *
      * @return $this
      */
@@ -1341,6 +1347,30 @@ class AdcreativeCreativeElementsWithOptions implements ModelInterface, ArrayAcce
     public function setEndPage($endPage)
     {
         $this->container['endPage'] = $endPage;
+
+        return $this;
+    }
+
+    /**
+     * Gets shopImage
+     *
+     * @return string
+     */
+    public function getShopImage()
+    {
+        return $this->container['shopImage'];
+    }
+
+    /**
+     * Sets shopImage
+     *
+     * @param string $shopImage shopImage
+     *
+     * @return $this
+     */
+    public function setShopImage($shopImage)
+    {
+        $this->container['shopImage'] = $shopImage;
 
         return $this;
     }

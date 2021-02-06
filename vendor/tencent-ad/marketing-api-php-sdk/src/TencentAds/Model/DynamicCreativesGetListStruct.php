@@ -70,6 +70,7 @@ class DynamicCreativesGetListStruct implements ModelInterface, ArrayAccess
         'siteSet' => 'string[]',
         'promotedObjectType' => '\TencentAds\Model\PromotedObjectType',
         'promotedObjectId' => 'string',
+        'profileId' => 'int',
         'createdTime' => 'int',
         'lastModifiedTime' => 'int',
         'isDeleted' => 'bool',
@@ -77,7 +78,8 @@ class DynamicCreativesGetListStruct implements ModelInterface, ArrayAccess
         'impressionTrackingUrl' => 'string',
         'clickTrackingUrl' => 'string',
         'feedsVideoCommentSwitch' => 'bool',
-        'unionMarketSwitch' => 'bool'
+        'unionMarketSwitch' => 'bool',
+        'videoEndPage' => '\TencentAds\Model\VideoEndPageSpec'
     ];
 
     /**
@@ -98,6 +100,7 @@ class DynamicCreativesGetListStruct implements ModelInterface, ArrayAccess
         'siteSet' => null,
         'promotedObjectType' => null,
         'promotedObjectId' => null,
+        'profileId' => 'int64',
         'createdTime' => 'int64',
         'lastModifiedTime' => 'int64',
         'isDeleted' => null,
@@ -105,7 +108,8 @@ class DynamicCreativesGetListStruct implements ModelInterface, ArrayAccess
         'impressionTrackingUrl' => null,
         'clickTrackingUrl' => null,
         'feedsVideoCommentSwitch' => null,
-        'unionMarketSwitch' => null
+        'unionMarketSwitch' => null,
+        'videoEndPage' => null
     ];
 
     /**
@@ -147,6 +151,7 @@ class DynamicCreativesGetListStruct implements ModelInterface, ArrayAccess
         'siteSet' => 'site_set',
         'promotedObjectType' => 'promoted_object_type',
         'promotedObjectId' => 'promoted_object_id',
+        'profileId' => 'profile_id',
         'createdTime' => 'created_time',
         'lastModifiedTime' => 'last_modified_time',
         'isDeleted' => 'is_deleted',
@@ -154,7 +159,8 @@ class DynamicCreativesGetListStruct implements ModelInterface, ArrayAccess
         'impressionTrackingUrl' => 'impression_tracking_url',
         'clickTrackingUrl' => 'click_tracking_url',
         'feedsVideoCommentSwitch' => 'feeds_video_comment_switch',
-        'unionMarketSwitch' => 'union_market_switch'
+        'unionMarketSwitch' => 'union_market_switch',
+        'videoEndPage' => 'video_end_page'
     ];
 
     /**
@@ -175,6 +181,7 @@ class DynamicCreativesGetListStruct implements ModelInterface, ArrayAccess
         'siteSet' => 'setSiteSet',
         'promotedObjectType' => 'setPromotedObjectType',
         'promotedObjectId' => 'setPromotedObjectId',
+        'profileId' => 'setProfileId',
         'createdTime' => 'setCreatedTime',
         'lastModifiedTime' => 'setLastModifiedTime',
         'isDeleted' => 'setIsDeleted',
@@ -182,7 +189,8 @@ class DynamicCreativesGetListStruct implements ModelInterface, ArrayAccess
         'impressionTrackingUrl' => 'setImpressionTrackingUrl',
         'clickTrackingUrl' => 'setClickTrackingUrl',
         'feedsVideoCommentSwitch' => 'setFeedsVideoCommentSwitch',
-        'unionMarketSwitch' => 'setUnionMarketSwitch'
+        'unionMarketSwitch' => 'setUnionMarketSwitch',
+        'videoEndPage' => 'setVideoEndPage'
     ];
 
     /**
@@ -203,6 +211,7 @@ class DynamicCreativesGetListStruct implements ModelInterface, ArrayAccess
         'siteSet' => 'getSiteSet',
         'promotedObjectType' => 'getPromotedObjectType',
         'promotedObjectId' => 'getPromotedObjectId',
+        'profileId' => 'getProfileId',
         'createdTime' => 'getCreatedTime',
         'lastModifiedTime' => 'getLastModifiedTime',
         'isDeleted' => 'getIsDeleted',
@@ -210,7 +219,8 @@ class DynamicCreativesGetListStruct implements ModelInterface, ArrayAccess
         'impressionTrackingUrl' => 'getImpressionTrackingUrl',
         'clickTrackingUrl' => 'getClickTrackingUrl',
         'feedsVideoCommentSwitch' => 'getFeedsVideoCommentSwitch',
-        'unionMarketSwitch' => 'getUnionMarketSwitch'
+        'unionMarketSwitch' => 'getUnionMarketSwitch',
+        'videoEndPage' => 'getVideoEndPage'
     ];
 
     /**
@@ -285,6 +295,7 @@ class DynamicCreativesGetListStruct implements ModelInterface, ArrayAccess
         $this->container['siteSet'] = isset($data['siteSet']) ? $data['siteSet'] : null;
         $this->container['promotedObjectType'] = isset($data['promotedObjectType']) ? $data['promotedObjectType'] : null;
         $this->container['promotedObjectId'] = isset($data['promotedObjectId']) ? $data['promotedObjectId'] : null;
+        $this->container['profileId'] = isset($data['profileId']) ? $data['profileId'] : null;
         $this->container['createdTime'] = isset($data['createdTime']) ? $data['createdTime'] : null;
         $this->container['lastModifiedTime'] = isset($data['lastModifiedTime']) ? $data['lastModifiedTime'] : null;
         $this->container['isDeleted'] = isset($data['isDeleted']) ? $data['isDeleted'] : null;
@@ -293,6 +304,7 @@ class DynamicCreativesGetListStruct implements ModelInterface, ArrayAccess
         $this->container['clickTrackingUrl'] = isset($data['clickTrackingUrl']) ? $data['clickTrackingUrl'] : null;
         $this->container['feedsVideoCommentSwitch'] = isset($data['feedsVideoCommentSwitch']) ? $data['feedsVideoCommentSwitch'] : null;
         $this->container['unionMarketSwitch'] = isset($data['unionMarketSwitch']) ? $data['unionMarketSwitch'] : null;
+        $this->container['videoEndPage'] = isset($data['videoEndPage']) ? $data['videoEndPage'] : null;
     }
 
     /**
@@ -608,6 +620,30 @@ class DynamicCreativesGetListStruct implements ModelInterface, ArrayAccess
     }
 
     /**
+     * Gets profileId
+     *
+     * @return int
+     */
+    public function getProfileId()
+    {
+        return $this->container['profileId'];
+    }
+
+    /**
+     * Sets profileId
+     *
+     * @param int $profileId profileId
+     *
+     * @return $this
+     */
+    public function setProfileId($profileId)
+    {
+        $this->container['profileId'] = $profileId;
+
+        return $this;
+    }
+
+    /**
      * Gets createdTime
      *
      * @return int
@@ -795,6 +831,30 @@ class DynamicCreativesGetListStruct implements ModelInterface, ArrayAccess
     public function setUnionMarketSwitch($unionMarketSwitch)
     {
         $this->container['unionMarketSwitch'] = $unionMarketSwitch;
+
+        return $this;
+    }
+
+    /**
+     * Gets videoEndPage
+     *
+     * @return \TencentAds\Model\VideoEndPageSpec
+     */
+    public function getVideoEndPage()
+    {
+        return $this->container['videoEndPage'];
+    }
+
+    /**
+     * Sets videoEndPage
+     *
+     * @param \TencentAds\Model\VideoEndPageSpec $videoEndPage videoEndPage
+     *
+     * @return $this
+     */
+    public function setVideoEndPage($videoEndPage)
+    {
+        $this->container['videoEndPage'] = $videoEndPage;
 
         return $this;
     }

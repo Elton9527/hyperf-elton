@@ -23,6 +23,7 @@ final class SymfonyRiskySet extends AbstractRuleSetDescription
     {
         $rules = [
             '@PHP56Migration:risky' => true,
+            '@PSR12:risky' => true,
             'array_push' => true,
             'combine_nested_dirname' => true,
             'dir_constant' => true,
@@ -46,17 +47,7 @@ final class SymfonyRiskySet extends AbstractRuleSetDescription
             'is_null' => true,
             'logical_operators' => true,
             'modernize_types_casting' => true,
-            'native_constant_invocation' => [
-                'fix_built_in' => false,
-                'include' => [
-                    'DIRECTORY_SEPARATOR',
-                    'PHP_INT_SIZE',
-                    'PHP_SAPI',
-                    'PHP_VERSION_ID',
-                ],
-                'scope' => 'namespaced',
-                'strict' => true,
-            ],
+            'native_constant_invocation' => true,
             'native_function_invocation' => [
                 'include' => [
                     '@compiler_optimized',
@@ -67,10 +58,11 @@ final class SymfonyRiskySet extends AbstractRuleSetDescription
             'no_alias_functions' => true,
             'no_homoglyph_names' => true,
             'no_php4_constructor' => true,
-            'no_trailing_whitespace_in_string' => true,
             'no_unneeded_final_method' => true,
+            'no_unreachable_default_argument_value' => false,
             'no_useless_sprintf' => true,
             'non_printable_character' => true,
+            'ordered_traits' => true,
             'php_unit_construct' => true,
             'php_unit_mock_short_will_return' => true,
             'php_unit_set_up_tear_down_visibility' => true,
@@ -94,6 +86,6 @@ final class SymfonyRiskySet extends AbstractRuleSetDescription
 
     public function getDescription()
     {
-        return 'Rules that follow the official `Symfony Coding Standards <https://symfony.com/doc/current/contributing/code/standards.html>`_';
+        return 'Rules that follow the official `Symfony Coding Standards <https://symfony.com/doc/current/contributing/code/standards.html>`_.';
     }
 }

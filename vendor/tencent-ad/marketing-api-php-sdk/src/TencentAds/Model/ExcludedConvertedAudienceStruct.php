@@ -58,7 +58,7 @@ class ExcludedConvertedAudienceStruct implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $swaggerTypes = [
-        'excludedDimension' => '\TencentAds\Model\ExcludedConvertedAudience',
+        'excludedDimension' => '\TencentAds\Model\ExcludedDimension',
         'conversionBehaviorList' => 'string[]'
     ];
 
@@ -214,7 +214,7 @@ class ExcludedConvertedAudienceStruct implements ModelInterface, ArrayAccess
     /**
      * Gets excludedDimension
      *
-     * @return \TencentAds\Model\ExcludedConvertedAudience
+     * @return \TencentAds\Model\ExcludedDimension
      */
     public function getExcludedDimension()
     {
@@ -224,7 +224,7 @@ class ExcludedConvertedAudienceStruct implements ModelInterface, ArrayAccess
     /**
      * Sets excludedDimension
      *
-     * @param \TencentAds\Model\ExcludedConvertedAudience $excludedDimension excludedDimension
+     * @param \TencentAds\Model\ExcludedDimension $excludedDimension excludedDimension
      *
      * @return $this
      */

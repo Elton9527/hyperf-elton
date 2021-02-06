@@ -65,6 +65,8 @@ class DynamicCreativesUpdateRequest implements ModelInterface, ArrayAccess
         'clickTrackingUrl' => 'string',
         'feedsVideoCommentSwitch' => 'bool',
         'unionMarketSwitch' => 'bool',
+        'profileId' => 'int',
+        'videoEndPage' => '\TencentAds\Model\VideoEndPageSpec',
         'accountId' => 'int'
     ];
 
@@ -82,6 +84,8 @@ class DynamicCreativesUpdateRequest implements ModelInterface, ArrayAccess
         'clickTrackingUrl' => null,
         'feedsVideoCommentSwitch' => null,
         'unionMarketSwitch' => null,
+        'profileId' => 'int64',
+        'videoEndPage' => null,
         'accountId' => 'int64'
     ];
 
@@ -120,6 +124,8 @@ class DynamicCreativesUpdateRequest implements ModelInterface, ArrayAccess
         'clickTrackingUrl' => 'click_tracking_url',
         'feedsVideoCommentSwitch' => 'feeds_video_comment_switch',
         'unionMarketSwitch' => 'union_market_switch',
+        'profileId' => 'profile_id',
+        'videoEndPage' => 'video_end_page',
         'accountId' => 'account_id'
     ];
 
@@ -137,6 +143,8 @@ class DynamicCreativesUpdateRequest implements ModelInterface, ArrayAccess
         'clickTrackingUrl' => 'setClickTrackingUrl',
         'feedsVideoCommentSwitch' => 'setFeedsVideoCommentSwitch',
         'unionMarketSwitch' => 'setUnionMarketSwitch',
+        'profileId' => 'setProfileId',
+        'videoEndPage' => 'setVideoEndPage',
         'accountId' => 'setAccountId'
     ];
 
@@ -154,6 +162,8 @@ class DynamicCreativesUpdateRequest implements ModelInterface, ArrayAccess
         'clickTrackingUrl' => 'getClickTrackingUrl',
         'feedsVideoCommentSwitch' => 'getFeedsVideoCommentSwitch',
         'unionMarketSwitch' => 'getUnionMarketSwitch',
+        'profileId' => 'getProfileId',
+        'videoEndPage' => 'getVideoEndPage',
         'accountId' => 'getAccountId'
     ];
 
@@ -225,6 +235,8 @@ class DynamicCreativesUpdateRequest implements ModelInterface, ArrayAccess
         $this->container['clickTrackingUrl'] = isset($data['clickTrackingUrl']) ? $data['clickTrackingUrl'] : null;
         $this->container['feedsVideoCommentSwitch'] = isset($data['feedsVideoCommentSwitch']) ? $data['feedsVideoCommentSwitch'] : null;
         $this->container['unionMarketSwitch'] = isset($data['unionMarketSwitch']) ? $data['unionMarketSwitch'] : null;
+        $this->container['profileId'] = isset($data['profileId']) ? $data['profileId'] : null;
+        $this->container['videoEndPage'] = isset($data['videoEndPage']) ? $data['videoEndPage'] : null;
         $this->container['accountId'] = isset($data['accountId']) ? $data['accountId'] : null;
     }
 
@@ -440,6 +452,54 @@ class DynamicCreativesUpdateRequest implements ModelInterface, ArrayAccess
     public function setUnionMarketSwitch($unionMarketSwitch)
     {
         $this->container['unionMarketSwitch'] = $unionMarketSwitch;
+
+        return $this;
+    }
+
+    /**
+     * Gets profileId
+     *
+     * @return int
+     */
+    public function getProfileId()
+    {
+        return $this->container['profileId'];
+    }
+
+    /**
+     * Sets profileId
+     *
+     * @param int $profileId profileId
+     *
+     * @return $this
+     */
+    public function setProfileId($profileId)
+    {
+        $this->container['profileId'] = $profileId;
+
+        return $this;
+    }
+
+    /**
+     * Gets videoEndPage
+     *
+     * @return \TencentAds\Model\VideoEndPageSpec
+     */
+    public function getVideoEndPage()
+    {
+        return $this->container['videoEndPage'];
+    }
+
+    /**
+     * Sets videoEndPage
+     *
+     * @param \TencentAds\Model\VideoEndPageSpec $videoEndPage videoEndPage
+     *
+     * @return $this
+     */
+    public function setVideoEndPage($videoEndPage)
+    {
+        $this->container['videoEndPage'] = $videoEndPage;
 
         return $this;
     }

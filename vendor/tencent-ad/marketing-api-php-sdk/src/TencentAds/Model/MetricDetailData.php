@@ -63,7 +63,9 @@ class MetricDetailData implements ModelInterface, ArrayAccess
         'canvasCpnCouponsGetPv' => 'int',
         'canvasCpnCouponsCost' => 'int',
         'canvasCpnCouponsUsePv' => 'int',
-        'purchase' => 'int'
+        'purchase' => 'int',
+        'promotionClaimOfferPv' => 'int',
+        'pageVisitStorePv' => 'int'
     ];
 
     /**
@@ -77,7 +79,9 @@ class MetricDetailData implements ModelInterface, ArrayAccess
         'canvasCpnCouponsGetPv' => 'int64',
         'canvasCpnCouponsCost' => 'int64',
         'canvasCpnCouponsUsePv' => 'int64',
-        'purchase' => 'int64'
+        'purchase' => 'int64',
+        'promotionClaimOfferPv' => 'int64',
+        'pageVisitStorePv' => 'int64'
     ];
 
     /**
@@ -112,7 +116,9 @@ class MetricDetailData implements ModelInterface, ArrayAccess
         'canvasCpnCouponsGetPv' => 'canvas_cpn_coupons_get_pv',
         'canvasCpnCouponsCost' => 'canvas_cpn_coupons_cost',
         'canvasCpnCouponsUsePv' => 'canvas_cpn_coupons_use_pv',
-        'purchase' => 'purchase'
+        'purchase' => 'purchase',
+        'promotionClaimOfferPv' => 'promotion_claim_offer_pv',
+        'pageVisitStorePv' => 'page_visit_store_pv'
     ];
 
     /**
@@ -126,7 +132,9 @@ class MetricDetailData implements ModelInterface, ArrayAccess
         'canvasCpnCouponsGetPv' => 'setCanvasCpnCouponsGetPv',
         'canvasCpnCouponsCost' => 'setCanvasCpnCouponsCost',
         'canvasCpnCouponsUsePv' => 'setCanvasCpnCouponsUsePv',
-        'purchase' => 'setPurchase'
+        'purchase' => 'setPurchase',
+        'promotionClaimOfferPv' => 'setPromotionClaimOfferPv',
+        'pageVisitStorePv' => 'setPageVisitStorePv'
     ];
 
     /**
@@ -140,7 +148,9 @@ class MetricDetailData implements ModelInterface, ArrayAccess
         'canvasCpnCouponsGetPv' => 'getCanvasCpnCouponsGetPv',
         'canvasCpnCouponsCost' => 'getCanvasCpnCouponsCost',
         'canvasCpnCouponsUsePv' => 'getCanvasCpnCouponsUsePv',
-        'purchase' => 'getPurchase'
+        'purchase' => 'getPurchase',
+        'promotionClaimOfferPv' => 'getPromotionClaimOfferPv',
+        'pageVisitStorePv' => 'getPageVisitStorePv'
     ];
 
     /**
@@ -209,6 +219,8 @@ class MetricDetailData implements ModelInterface, ArrayAccess
         $this->container['canvasCpnCouponsCost'] = isset($data['canvasCpnCouponsCost']) ? $data['canvasCpnCouponsCost'] : null;
         $this->container['canvasCpnCouponsUsePv'] = isset($data['canvasCpnCouponsUsePv']) ? $data['canvasCpnCouponsUsePv'] : null;
         $this->container['purchase'] = isset($data['purchase']) ? $data['purchase'] : null;
+        $this->container['promotionClaimOfferPv'] = isset($data['promotionClaimOfferPv']) ? $data['promotionClaimOfferPv'] : null;
+        $this->container['pageVisitStorePv'] = isset($data['pageVisitStorePv']) ? $data['pageVisitStorePv'] : null;
     }
 
     /**
@@ -375,6 +387,54 @@ class MetricDetailData implements ModelInterface, ArrayAccess
     public function setPurchase($purchase)
     {
         $this->container['purchase'] = $purchase;
+
+        return $this;
+    }
+
+    /**
+     * Gets promotionClaimOfferPv
+     *
+     * @return int
+     */
+    public function getPromotionClaimOfferPv()
+    {
+        return $this->container['promotionClaimOfferPv'];
+    }
+
+    /**
+     * Sets promotionClaimOfferPv
+     *
+     * @param int $promotionClaimOfferPv promotionClaimOfferPv
+     *
+     * @return $this
+     */
+    public function setPromotionClaimOfferPv($promotionClaimOfferPv)
+    {
+        $this->container['promotionClaimOfferPv'] = $promotionClaimOfferPv;
+
+        return $this;
+    }
+
+    /**
+     * Gets pageVisitStorePv
+     *
+     * @return int
+     */
+    public function getPageVisitStorePv()
+    {
+        return $this->container['pageVisitStorePv'];
+    }
+
+    /**
+     * Sets pageVisitStorePv
+     *
+     * @param int $pageVisitStorePv pageVisitStorePv
+     *
+     * @return $this
+     */
+    public function setPageVisitStorePv($pageVisitStorePv)
+    {
+        $this->container['pageVisitStorePv'] = $pageVisitStorePv;
 
         return $this;
     }

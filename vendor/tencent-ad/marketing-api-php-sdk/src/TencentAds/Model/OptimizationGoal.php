@@ -104,6 +104,8 @@ class OptimizationGoal
     const EXTERNAL_LINK_CLICK = 'OPTIMIZATIONGOAL_EXTERNAL_LINK_CLICK';
     const BUY_COUPONS = 'OPTIMIZATIONGOAL_BUY_COUPONS';
     const LEAVE_INFORMATION = 'OPTIMIZATIONGOAL_LEAVE_INFORMATION';
+    const CORE_ACTION = 'OPTIMIZATIONGOAL_CORE_ACTION';
+    const ONE_DAY_RETENTION_RATIO = 'OPTIMIZATIONGOAL_ONE_DAY_RETENTION_RATIO';
     
     /**
      * Gets allowable values of the enum
@@ -172,6 +174,8 @@ class OptimizationGoal
             self::EXTERNAL_LINK_CLICK,
             self::BUY_COUPONS,
             self::LEAVE_INFORMATION,
+            self::CORE_ACTION,
+            self::ONE_DAY_RETENTION_RATIO,
         ];
     }
 }

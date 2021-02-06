@@ -61,7 +61,7 @@ class ControlListItemDetailData implements ModelInterface, ArrayAccess
         'itemName' => 'string',
         'itemType' => '\TencentAds\Model\ItemType',
         'placeholder' => 'string',
-        'selectElements' => 'string'
+        'selectElements' => '\TencentAds\Model\ConfigsDetailDataArrayItem[]'
     ];
 
     /**
@@ -298,7 +298,7 @@ class ControlListItemDetailData implements ModelInterface, ArrayAccess
     /**
      * Gets selectElements
      *
-     * @return string
+     * @return \TencentAds\Model\ConfigsDetailDataArrayItem[]
      */
     public function getSelectElements()
     {
@@ -308,7 +308,7 @@ class ControlListItemDetailData implements ModelInterface, ArrayAccess
     /**
      * Sets selectElements
      *
-     * @param string $selectElements selectElements
+     * @param \TencentAds\Model\ConfigsDetailDataArrayItem[] $selectElements selectElements
      *
      * @return $this
      */

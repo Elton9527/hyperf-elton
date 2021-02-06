@@ -85,7 +85,6 @@ class AdcreativesGetListStruct implements ModelInterface, ArrayAccess
         'dynamicAdcreativeSpec' => '\TencentAds\Model\DynamicAdcreativeSpec',
         'isDeleted' => 'bool',
         'isDynamicCreative' => 'bool',
-        'multiShareOptimizationEnabled' => 'bool',
         'componentId' => 'int',
         'onlineEnabled' => 'bool',
         'revisedAdcreativeSpec' => '\TencentAds\Model\RevisedAdcreativeSpec',
@@ -100,6 +99,7 @@ class AdcreativesGetListStruct implements ModelInterface, ArrayAccess
         'floatingZone' => '\TencentAds\Model\FloatingZone',
         'marketingPendantImageId' => 'string',
         'countdownSwitch' => 'bool',
+        'pageTrackUrl' => 'string',
         'adcreativeTemplateId' => 'int',
         'adcreativeElements' => '\TencentAds\Model\AdcreativeCreativeElementsReadMp'
     ];
@@ -137,7 +137,6 @@ class AdcreativesGetListStruct implements ModelInterface, ArrayAccess
         'dynamicAdcreativeSpec' => null,
         'isDeleted' => null,
         'isDynamicCreative' => null,
-        'multiShareOptimizationEnabled' => null,
         'componentId' => 'int64',
         'onlineEnabled' => null,
         'revisedAdcreativeSpec' => null,
@@ -152,6 +151,7 @@ class AdcreativesGetListStruct implements ModelInterface, ArrayAccess
         'floatingZone' => null,
         'marketingPendantImageId' => null,
         'countdownSwitch' => null,
+        'pageTrackUrl' => null,
         'adcreativeTemplateId' => 'int64',
         'adcreativeElements' => null
     ];
@@ -210,7 +210,6 @@ class AdcreativesGetListStruct implements ModelInterface, ArrayAccess
         'dynamicAdcreativeSpec' => 'dynamic_adcreative_spec',
         'isDeleted' => 'is_deleted',
         'isDynamicCreative' => 'is_dynamic_creative',
-        'multiShareOptimizationEnabled' => 'multi_share_optimization_enabled',
         'componentId' => 'component_id',
         'onlineEnabled' => 'online_enabled',
         'revisedAdcreativeSpec' => 'revised_adcreative_spec',
@@ -225,6 +224,7 @@ class AdcreativesGetListStruct implements ModelInterface, ArrayAccess
         'floatingZone' => 'floating_zone',
         'marketingPendantImageId' => 'marketing_pendant_image_id',
         'countdownSwitch' => 'countdown_switch',
+        'pageTrackUrl' => 'page_track_url',
         'adcreativeTemplateId' => 'adcreative_template_id',
         'adcreativeElements' => 'adcreative_elements'
     ];
@@ -262,7 +262,6 @@ class AdcreativesGetListStruct implements ModelInterface, ArrayAccess
         'dynamicAdcreativeSpec' => 'setDynamicAdcreativeSpec',
         'isDeleted' => 'setIsDeleted',
         'isDynamicCreative' => 'setIsDynamicCreative',
-        'multiShareOptimizationEnabled' => 'setMultiShareOptimizationEnabled',
         'componentId' => 'setComponentId',
         'onlineEnabled' => 'setOnlineEnabled',
         'revisedAdcreativeSpec' => 'setRevisedAdcreativeSpec',
@@ -277,6 +276,7 @@ class AdcreativesGetListStruct implements ModelInterface, ArrayAccess
         'floatingZone' => 'setFloatingZone',
         'marketingPendantImageId' => 'setMarketingPendantImageId',
         'countdownSwitch' => 'setCountdownSwitch',
+        'pageTrackUrl' => 'setPageTrackUrl',
         'adcreativeTemplateId' => 'setAdcreativeTemplateId',
         'adcreativeElements' => 'setAdcreativeElements'
     ];
@@ -314,7 +314,6 @@ class AdcreativesGetListStruct implements ModelInterface, ArrayAccess
         'dynamicAdcreativeSpec' => 'getDynamicAdcreativeSpec',
         'isDeleted' => 'getIsDeleted',
         'isDynamicCreative' => 'getIsDynamicCreative',
-        'multiShareOptimizationEnabled' => 'getMultiShareOptimizationEnabled',
         'componentId' => 'getComponentId',
         'onlineEnabled' => 'getOnlineEnabled',
         'revisedAdcreativeSpec' => 'getRevisedAdcreativeSpec',
@@ -329,6 +328,7 @@ class AdcreativesGetListStruct implements ModelInterface, ArrayAccess
         'floatingZone' => 'getFloatingZone',
         'marketingPendantImageId' => 'getMarketingPendantImageId',
         'countdownSwitch' => 'getCountdownSwitch',
+        'pageTrackUrl' => 'getPageTrackUrl',
         'adcreativeTemplateId' => 'getAdcreativeTemplateId',
         'adcreativeElements' => 'getAdcreativeElements'
     ];
@@ -420,7 +420,6 @@ class AdcreativesGetListStruct implements ModelInterface, ArrayAccess
         $this->container['dynamicAdcreativeSpec'] = isset($data['dynamicAdcreativeSpec']) ? $data['dynamicAdcreativeSpec'] : null;
         $this->container['isDeleted'] = isset($data['isDeleted']) ? $data['isDeleted'] : null;
         $this->container['isDynamicCreative'] = isset($data['isDynamicCreative']) ? $data['isDynamicCreative'] : null;
-        $this->container['multiShareOptimizationEnabled'] = isset($data['multiShareOptimizationEnabled']) ? $data['multiShareOptimizationEnabled'] : null;
         $this->container['componentId'] = isset($data['componentId']) ? $data['componentId'] : null;
         $this->container['onlineEnabled'] = isset($data['onlineEnabled']) ? $data['onlineEnabled'] : null;
         $this->container['revisedAdcreativeSpec'] = isset($data['revisedAdcreativeSpec']) ? $data['revisedAdcreativeSpec'] : null;
@@ -435,6 +434,7 @@ class AdcreativesGetListStruct implements ModelInterface, ArrayAccess
         $this->container['floatingZone'] = isset($data['floatingZone']) ? $data['floatingZone'] : null;
         $this->container['marketingPendantImageId'] = isset($data['marketingPendantImageId']) ? $data['marketingPendantImageId'] : null;
         $this->container['countdownSwitch'] = isset($data['countdownSwitch']) ? $data['countdownSwitch'] : null;
+        $this->container['pageTrackUrl'] = isset($data['pageTrackUrl']) ? $data['pageTrackUrl'] : null;
         $this->container['adcreativeTemplateId'] = isset($data['adcreativeTemplateId']) ? $data['adcreativeTemplateId'] : null;
         $this->container['adcreativeElements'] = isset($data['adcreativeElements']) ? $data['adcreativeElements'] : null;
     }
@@ -1112,30 +1112,6 @@ class AdcreativesGetListStruct implements ModelInterface, ArrayAccess
     }
 
     /**
-     * Gets multiShareOptimizationEnabled
-     *
-     * @return bool
-     */
-    public function getMultiShareOptimizationEnabled()
-    {
-        return $this->container['multiShareOptimizationEnabled'];
-    }
-
-    /**
-     * Sets multiShareOptimizationEnabled
-     *
-     * @param bool $multiShareOptimizationEnabled multiShareOptimizationEnabled
-     *
-     * @return $this
-     */
-    public function setMultiShareOptimizationEnabled($multiShareOptimizationEnabled)
-    {
-        $this->container['multiShareOptimizationEnabled'] = $multiShareOptimizationEnabled;
-
-        return $this;
-    }
-
-    /**
      * Gets componentId
      *
      * @return int
@@ -1467,6 +1443,30 @@ class AdcreativesGetListStruct implements ModelInterface, ArrayAccess
     public function setCountdownSwitch($countdownSwitch)
     {
         $this->container['countdownSwitch'] = $countdownSwitch;
+
+        return $this;
+    }
+
+    /**
+     * Gets pageTrackUrl
+     *
+     * @return string
+     */
+    public function getPageTrackUrl()
+    {
+        return $this->container['pageTrackUrl'];
+    }
+
+    /**
+     * Sets pageTrackUrl
+     *
+     * @param string $pageTrackUrl pageTrackUrl
+     *
+     * @return $this
+     */
+    public function setPageTrackUrl($pageTrackUrl)
+    {
+        $this->container['pageTrackUrl'] = $pageTrackUrl;
 
         return $this;
     }

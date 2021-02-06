@@ -67,7 +67,15 @@ class BatchAsyncRequestTaskSpec implements ModelInterface, ArrayAccess
         'updateCampaignSpeedModeSpec' => '\TencentAds\Model\UpdateCampaignSpeedModeItem[]',
         'deleteCampaignSpec' => '\TencentAds\Model\DeleteCampaignItem[]',
         'deleteAdgroupSpec' => '\TencentAds\Model\DeleteAdgroupItem[]',
-        'deleteAdSpec' => '\TencentAds\Model\DeleteAdItem[]'
+        'deleteAdSpec' => '\TencentAds\Model\DeleteAdItem[]',
+        'updateAdgroupDeepConversionWorthRateSpec' => '\TencentAds\Model\UpdateAdgroupDeepConversionWorthRateItem[]',
+        'updateAdcreativeDeepLinkUrlSpec' => '\TencentAds\Model\UpdateAdcreativeDeepLinkUrlItem[]',
+        'targetingsShareSpec' => '\TencentAds\Model\TargetingsShareItem[]',
+        'updateCampaignConfiguredStatusSpec' => '\TencentAds\Model\UpdateCampaignConfiguredStatusItem[]',
+        'updateCampaignDailyBudgetSpec' => '\TencentAds\Model\UpdateCampaignDailyBudgetItem[]',
+        'updateAdgroupConfiguredStatusSpec' => '\TencentAds\Model\UpdateAdgroupConfiguredStatusItem[]',
+        'updateAdgroupDailyBudgetSpec' => '\TencentAds\Model\UpdateAdgroupDailyBudgetItem[]',
+        'updateAdConfiguredStatusSpec' => '\TencentAds\Model\UpdateAdConfiguredStatusItem[]'
     ];
 
     /**
@@ -85,7 +93,15 @@ class BatchAsyncRequestTaskSpec implements ModelInterface, ArrayAccess
         'updateCampaignSpeedModeSpec' => null,
         'deleteCampaignSpec' => null,
         'deleteAdgroupSpec' => null,
-        'deleteAdSpec' => null
+        'deleteAdSpec' => null,
+        'updateAdgroupDeepConversionWorthRateSpec' => null,
+        'updateAdcreativeDeepLinkUrlSpec' => null,
+        'targetingsShareSpec' => null,
+        'updateCampaignConfiguredStatusSpec' => null,
+        'updateCampaignDailyBudgetSpec' => null,
+        'updateAdgroupConfiguredStatusSpec' => null,
+        'updateAdgroupDailyBudgetSpec' => null,
+        'updateAdConfiguredStatusSpec' => null
     ];
 
     /**
@@ -124,7 +140,15 @@ class BatchAsyncRequestTaskSpec implements ModelInterface, ArrayAccess
         'updateCampaignSpeedModeSpec' => 'update_campaign_speed_mode_spec',
         'deleteCampaignSpec' => 'delete_campaign_spec',
         'deleteAdgroupSpec' => 'delete_adgroup_spec',
-        'deleteAdSpec' => 'delete_ad_spec'
+        'deleteAdSpec' => 'delete_ad_spec',
+        'updateAdgroupDeepConversionWorthRateSpec' => 'update_adgroup_deep_conversion_worth_rate_spec',
+        'updateAdcreativeDeepLinkUrlSpec' => 'update_adcreative_deep_link_url_spec',
+        'targetingsShareSpec' => 'targetings_share_spec',
+        'updateCampaignConfiguredStatusSpec' => 'update_campaign_configured_status_spec',
+        'updateCampaignDailyBudgetSpec' => 'update_campaign_daily_budget_spec',
+        'updateAdgroupConfiguredStatusSpec' => 'update_adgroup_configured_status_spec',
+        'updateAdgroupDailyBudgetSpec' => 'update_adgroup_daily_budget_spec',
+        'updateAdConfiguredStatusSpec' => 'update_ad_configured_status_spec'
     ];
 
     /**
@@ -142,7 +166,15 @@ class BatchAsyncRequestTaskSpec implements ModelInterface, ArrayAccess
         'updateCampaignSpeedModeSpec' => 'setUpdateCampaignSpeedModeSpec',
         'deleteCampaignSpec' => 'setDeleteCampaignSpec',
         'deleteAdgroupSpec' => 'setDeleteAdgroupSpec',
-        'deleteAdSpec' => 'setDeleteAdSpec'
+        'deleteAdSpec' => 'setDeleteAdSpec',
+        'updateAdgroupDeepConversionWorthRateSpec' => 'setUpdateAdgroupDeepConversionWorthRateSpec',
+        'updateAdcreativeDeepLinkUrlSpec' => 'setUpdateAdcreativeDeepLinkUrlSpec',
+        'targetingsShareSpec' => 'setTargetingsShareSpec',
+        'updateCampaignConfiguredStatusSpec' => 'setUpdateCampaignConfiguredStatusSpec',
+        'updateCampaignDailyBudgetSpec' => 'setUpdateCampaignDailyBudgetSpec',
+        'updateAdgroupConfiguredStatusSpec' => 'setUpdateAdgroupConfiguredStatusSpec',
+        'updateAdgroupDailyBudgetSpec' => 'setUpdateAdgroupDailyBudgetSpec',
+        'updateAdConfiguredStatusSpec' => 'setUpdateAdConfiguredStatusSpec'
     ];
 
     /**
@@ -160,7 +192,15 @@ class BatchAsyncRequestTaskSpec implements ModelInterface, ArrayAccess
         'updateCampaignSpeedModeSpec' => 'getUpdateCampaignSpeedModeSpec',
         'deleteCampaignSpec' => 'getDeleteCampaignSpec',
         'deleteAdgroupSpec' => 'getDeleteAdgroupSpec',
-        'deleteAdSpec' => 'getDeleteAdSpec'
+        'deleteAdSpec' => 'getDeleteAdSpec',
+        'updateAdgroupDeepConversionWorthRateSpec' => 'getUpdateAdgroupDeepConversionWorthRateSpec',
+        'updateAdcreativeDeepLinkUrlSpec' => 'getUpdateAdcreativeDeepLinkUrlSpec',
+        'targetingsShareSpec' => 'getTargetingsShareSpec',
+        'updateCampaignConfiguredStatusSpec' => 'getUpdateCampaignConfiguredStatusSpec',
+        'updateCampaignDailyBudgetSpec' => 'getUpdateCampaignDailyBudgetSpec',
+        'updateAdgroupConfiguredStatusSpec' => 'getUpdateAdgroupConfiguredStatusSpec',
+        'updateAdgroupDailyBudgetSpec' => 'getUpdateAdgroupDailyBudgetSpec',
+        'updateAdConfiguredStatusSpec' => 'getUpdateAdConfiguredStatusSpec'
     ];
 
     /**
@@ -233,6 +273,14 @@ class BatchAsyncRequestTaskSpec implements ModelInterface, ArrayAccess
         $this->container['deleteCampaignSpec'] = isset($data['deleteCampaignSpec']) ? $data['deleteCampaignSpec'] : null;
         $this->container['deleteAdgroupSpec'] = isset($data['deleteAdgroupSpec']) ? $data['deleteAdgroupSpec'] : null;
         $this->container['deleteAdSpec'] = isset($data['deleteAdSpec']) ? $data['deleteAdSpec'] : null;
+        $this->container['updateAdgroupDeepConversionWorthRateSpec'] = isset($data['updateAdgroupDeepConversionWorthRateSpec']) ? $data['updateAdgroupDeepConversionWorthRateSpec'] : null;
+        $this->container['updateAdcreativeDeepLinkUrlSpec'] = isset($data['updateAdcreativeDeepLinkUrlSpec']) ? $data['updateAdcreativeDeepLinkUrlSpec'] : null;
+        $this->container['targetingsShareSpec'] = isset($data['targetingsShareSpec']) ? $data['targetingsShareSpec'] : null;
+        $this->container['updateCampaignConfiguredStatusSpec'] = isset($data['updateCampaignConfiguredStatusSpec']) ? $data['updateCampaignConfiguredStatusSpec'] : null;
+        $this->container['updateCampaignDailyBudgetSpec'] = isset($data['updateCampaignDailyBudgetSpec']) ? $data['updateCampaignDailyBudgetSpec'] : null;
+        $this->container['updateAdgroupConfiguredStatusSpec'] = isset($data['updateAdgroupConfiguredStatusSpec']) ? $data['updateAdgroupConfiguredStatusSpec'] : null;
+        $this->container['updateAdgroupDailyBudgetSpec'] = isset($data['updateAdgroupDailyBudgetSpec']) ? $data['updateAdgroupDailyBudgetSpec'] : null;
+        $this->container['updateAdConfiguredStatusSpec'] = isset($data['updateAdConfiguredStatusSpec']) ? $data['updateAdConfiguredStatusSpec'] : null;
     }
 
     /**
@@ -495,6 +543,198 @@ class BatchAsyncRequestTaskSpec implements ModelInterface, ArrayAccess
     public function setDeleteAdSpec($deleteAdSpec)
     {
         $this->container['deleteAdSpec'] = $deleteAdSpec;
+
+        return $this;
+    }
+
+    /**
+     * Gets updateAdgroupDeepConversionWorthRateSpec
+     *
+     * @return \TencentAds\Model\UpdateAdgroupDeepConversionWorthRateItem[]
+     */
+    public function getUpdateAdgroupDeepConversionWorthRateSpec()
+    {
+        return $this->container['updateAdgroupDeepConversionWorthRateSpec'];
+    }
+
+    /**
+     * Sets updateAdgroupDeepConversionWorthRateSpec
+     *
+     * @param \TencentAds\Model\UpdateAdgroupDeepConversionWorthRateItem[] $updateAdgroupDeepConversionWorthRateSpec updateAdgroupDeepConversionWorthRateSpec
+     *
+     * @return $this
+     */
+    public function setUpdateAdgroupDeepConversionWorthRateSpec($updateAdgroupDeepConversionWorthRateSpec)
+    {
+        $this->container['updateAdgroupDeepConversionWorthRateSpec'] = $updateAdgroupDeepConversionWorthRateSpec;
+
+        return $this;
+    }
+
+    /**
+     * Gets updateAdcreativeDeepLinkUrlSpec
+     *
+     * @return \TencentAds\Model\UpdateAdcreativeDeepLinkUrlItem[]
+     */
+    public function getUpdateAdcreativeDeepLinkUrlSpec()
+    {
+        return $this->container['updateAdcreativeDeepLinkUrlSpec'];
+    }
+
+    /**
+     * Sets updateAdcreativeDeepLinkUrlSpec
+     *
+     * @param \TencentAds\Model\UpdateAdcreativeDeepLinkUrlItem[] $updateAdcreativeDeepLinkUrlSpec updateAdcreativeDeepLinkUrlSpec
+     *
+     * @return $this
+     */
+    public function setUpdateAdcreativeDeepLinkUrlSpec($updateAdcreativeDeepLinkUrlSpec)
+    {
+        $this->container['updateAdcreativeDeepLinkUrlSpec'] = $updateAdcreativeDeepLinkUrlSpec;
+
+        return $this;
+    }
+
+    /**
+     * Gets targetingsShareSpec
+     *
+     * @return \TencentAds\Model\TargetingsShareItem[]
+     */
+    public function getTargetingsShareSpec()
+    {
+        return $this->container['targetingsShareSpec'];
+    }
+
+    /**
+     * Sets targetingsShareSpec
+     *
+     * @param \TencentAds\Model\TargetingsShareItem[] $targetingsShareSpec targetingsShareSpec
+     *
+     * @return $this
+     */
+    public function setTargetingsShareSpec($targetingsShareSpec)
+    {
+        $this->container['targetingsShareSpec'] = $targetingsShareSpec;
+
+        return $this;
+    }
+
+    /**
+     * Gets updateCampaignConfiguredStatusSpec
+     *
+     * @return \TencentAds\Model\UpdateCampaignConfiguredStatusItem[]
+     */
+    public function getUpdateCampaignConfiguredStatusSpec()
+    {
+        return $this->container['updateCampaignConfiguredStatusSpec'];
+    }
+
+    /**
+     * Sets updateCampaignConfiguredStatusSpec
+     *
+     * @param \TencentAds\Model\UpdateCampaignConfiguredStatusItem[] $updateCampaignConfiguredStatusSpec updateCampaignConfiguredStatusSpec
+     *
+     * @return $this
+     */
+    public function setUpdateCampaignConfiguredStatusSpec($updateCampaignConfiguredStatusSpec)
+    {
+        $this->container['updateCampaignConfiguredStatusSpec'] = $updateCampaignConfiguredStatusSpec;
+
+        return $this;
+    }
+
+    /**
+     * Gets updateCampaignDailyBudgetSpec
+     *
+     * @return \TencentAds\Model\UpdateCampaignDailyBudgetItem[]
+     */
+    public function getUpdateCampaignDailyBudgetSpec()
+    {
+        return $this->container['updateCampaignDailyBudgetSpec'];
+    }
+
+    /**
+     * Sets updateCampaignDailyBudgetSpec
+     *
+     * @param \TencentAds\Model\UpdateCampaignDailyBudgetItem[] $updateCampaignDailyBudgetSpec updateCampaignDailyBudgetSpec
+     *
+     * @return $this
+     */
+    public function setUpdateCampaignDailyBudgetSpec($updateCampaignDailyBudgetSpec)
+    {
+        $this->container['updateCampaignDailyBudgetSpec'] = $updateCampaignDailyBudgetSpec;
+
+        return $this;
+    }
+
+    /**
+     * Gets updateAdgroupConfiguredStatusSpec
+     *
+     * @return \TencentAds\Model\UpdateAdgroupConfiguredStatusItem[]
+     */
+    public function getUpdateAdgroupConfiguredStatusSpec()
+    {
+        return $this->container['updateAdgroupConfiguredStatusSpec'];
+    }
+
+    /**
+     * Sets updateAdgroupConfiguredStatusSpec
+     *
+     * @param \TencentAds\Model\UpdateAdgroupConfiguredStatusItem[] $updateAdgroupConfiguredStatusSpec updateAdgroupConfiguredStatusSpec
+     *
+     * @return $this
+     */
+    public function setUpdateAdgroupConfiguredStatusSpec($updateAdgroupConfiguredStatusSpec)
+    {
+        $this->container['updateAdgroupConfiguredStatusSpec'] = $updateAdgroupConfiguredStatusSpec;
+
+        return $this;
+    }
+
+    /**
+     * Gets updateAdgroupDailyBudgetSpec
+     *
+     * @return \TencentAds\Model\UpdateAdgroupDailyBudgetItem[]
+     */
+    public function getUpdateAdgroupDailyBudgetSpec()
+    {
+        return $this->container['updateAdgroupDailyBudgetSpec'];
+    }
+
+    /**
+     * Sets updateAdgroupDailyBudgetSpec
+     *
+     * @param \TencentAds\Model\UpdateAdgroupDailyBudgetItem[] $updateAdgroupDailyBudgetSpec updateAdgroupDailyBudgetSpec
+     *
+     * @return $this
+     */
+    public function setUpdateAdgroupDailyBudgetSpec($updateAdgroupDailyBudgetSpec)
+    {
+        $this->container['updateAdgroupDailyBudgetSpec'] = $updateAdgroupDailyBudgetSpec;
+
+        return $this;
+    }
+
+    /**
+     * Gets updateAdConfiguredStatusSpec
+     *
+     * @return \TencentAds\Model\UpdateAdConfiguredStatusItem[]
+     */
+    public function getUpdateAdConfiguredStatusSpec()
+    {
+        return $this->container['updateAdConfiguredStatusSpec'];
+    }
+
+    /**
+     * Sets updateAdConfiguredStatusSpec
+     *
+     * @param \TencentAds\Model\UpdateAdConfiguredStatusItem[] $updateAdConfiguredStatusSpec updateAdConfiguredStatusSpec
+     *
+     * @return $this
+     */
+    public function setUpdateAdConfiguredStatusSpec($updateAdConfiguredStatusSpec)
+    {
+        $this->container['updateAdConfiguredStatusSpec'] = $updateAdConfiguredStatusSpec;
 
         return $this;
     }
