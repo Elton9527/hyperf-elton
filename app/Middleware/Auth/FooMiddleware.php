@@ -38,7 +38,7 @@ class FooMiddleware implements MiddlewareInterface
 
     public function process(ServerRequestInterface $request, RequestHandlerInterface $handler): ResponseInterface
     {
-        echo "Hello, this si FooMiddleware" . PHP_EOL;
+        echo "Hello, this is FooMiddleware" . PHP_EOL;
         return $handler->handle($request);
     }
 }
